@@ -94,8 +94,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function displayResult(lot) {
         document.getElementById('result-number').textContent = lot.number;
+        document.getElementById('result-level').textContent = lot.level || '';
         document.getElementById('result-title').textContent = lot.title;
         document.getElementById('result-poem').textContent = lot.poem;
+        document.getElementById('result-story').textContent = lot.story || '—';
         document.getElementById('result-meaning').textContent = lot.meaning;
         document.getElementById('result-explanation').textContent = lot.explanation;
     }

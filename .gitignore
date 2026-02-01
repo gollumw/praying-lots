@@ -23,3 +23,6 @@ build/
 .vscode/
 .DS_Store
 Thumbs.db
+
+# 籤詩資料（由 scripts/build_lots.py 本地產生，不上傳）
+data/lots.json

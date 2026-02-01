@@ -212,6 +212,7 @@ button:hover {
 }
 
 .lot-header h2 { color: var(--primary-red); margin-bottom: 0.5rem; }
+.lot-level { font-size: 0.95rem; color: var(--gold); margin-bottom: 0.5rem; opacity: 0.9; }
 
 .poem {
     font-size: 1.5rem;
