@@ -56,34 +56,52 @@
                 </div>
             </section>
 
-            <!-- Step 4: Result -->
-            <section id="step-result" class="hidden">
-                <div class="lot-card" id="lot-card">
-                    <div class="lot-header">
-                        <h2 id="result-number"></h2>
-                        <p id="result-level" class="lot-level"></p>
-                        <h3 id="result-title"></h3>
-                    </div>
-                    <div class="lot-content">
-                        <p class="poem" id="result-poem"></p>
-                        <hr>
-                        <div class="explanation-section">
-                            <h4>典故與故事</h4>
-                            <p id="result-story"></p>
-                        </div>
-                        <div class="explanation-section">
-                            <h4>詩意與寓意</h4>
-                            <p id="result-meaning"></p>
-                        </div>
-                        <div class="explanation-section">
-                            <h4>解曰</h4>
-                            <p id="result-explanation"></p>
-                        </div>
-                    </div>
-                    <button id="btn-restart" class="btn-secondary">再次請示</button>
-                </div>
-            </section>
+            <!-- Step 4: Result (triggers dialog) -->
+            <section id="step-result" class="hidden"></section>
         </main>
+    </div>
+
+    <!-- 抽籤結果對話視窗：左＝故事＋AI 聊天，右＝籤詩 -->
+    <div id="lot-dialog" class="lot-dialog hidden" aria-modal="true">
+        <div class="lot-dialog-backdrop"></div>
+        <div class="lot-dialog-box">
+            <div class="lot-dialog-header">
+                <h2 id="dialog-result-title">籤詩結果</h2>
+                <button type="button" id="btn-close-dialog" class="btn-close-dialog" aria-label="關閉">×</button>
+            </div>
+            <div class="lot-dialog-body">
+                <div class="lot-dialog-left">
+                    <div class="story-block">
+                        <h4>籤詩典故與故事</h4>
+                        <p id="dialog-story"></p>
+                    </div>
+                    <div class="chat-block">
+                        <h4>與觀世音菩薩聊聊這支籤</h4>
+                        <p id="ollama-status" class="ollama-status" aria-live="polite"></p>
+                        <div id="chat-messages" class="chat-messages"></div>
+                        <div class="chat-input-row">
+                            <textarea id="chat-input" class="chat-input" placeholder="輸入想問的話，例如：這支籤對感情有什麼建議？" rows="2"></textarea>
+                            <button type="button" id="btn-send-chat" class="btn-send-chat">送出</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="lot-dialog-right">
+                    <div class="lot-card-compact">
+                        <div class="lot-header">
+                            <h2 id="dialog-number"></h2>
+                            <p id="dialog-level" class="lot-level"></p>
+                            <h3 id="dialog-title"></h3>
+                        </div>
+                        <p class="poem-compact" id="dialog-poem"></p>
+                        <div class="lot-meta">
+                            <p><strong>詩意</strong> <span id="dialog-meaning"></span></p>
+                            <p><strong>解曰</strong> <span id="dialog-explanation"></span></p>
+                        </div>
+                    </div>
+                    <button type="button" id="btn-restart" class="btn-secondary">再次請示</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="/static/script.js"></script>
