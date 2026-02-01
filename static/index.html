@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>觀世音靈籤 - 線上抽籤系統</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-overlay"></div>
+    
+    <div class="container">
+        <header>
+            <h1>觀世音靈籤</h1>
+            <p class="subtitle">誠心祈求，指點迷津</p>
+        </header>
+
+        <main>
+            <!-- Step 1: Prayer / Question -->
+            <section id="step-question" class="active">
+                <div class="input-group">
+                    <textarea id="user-question" placeholder="請心中默念您的問項，或在此輸入..."></textarea>
+                    <button id="btn-start" class="btn-primary">開始擲杯</button>
+                </div>
+            </section>
+
+            <!-- Step 2: Moon Blocks (擲杯) -->
+            <section id="step-blocks" class="hidden">
+                <div class="blocks-container">
+                    <div id="block-1" class="block"></div>
+                    <div id="block-2" class="block"></div>
+                </div>
+                <div class="controls">
+                    <button id="btn-throw" class="btn-primary">擲杯</button>
+                </div>
+                <div id="block-result" class="result-text"></div>
+            </section>
+
+            <!-- Step 3: Draw Lot (抽籤) -->
+            <section id="step-draw" class="hidden">
+                <div class="lot-stick-container">
+                    <div class="stick-bucket">
+                        <div class="sticks">
+                            <!-- Animated sticks will be handled in CSS/JS -->
+                            <div class="stick"></div>
+                            <div class="stick"></div>
+                            <div class="stick"></div>
+                            <div class="stick"></div>
+                            <div class="stick"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="controls">
+                    <button id="btn-draw" class="btn-gold">抽籤</button>
+                </div>
+            </section>
+
+            <!-- Step 4: Result -->
+            <section id="step-result" class="hidden">
+                <div class="lot-card" id="lot-card">
+                    <div class="lot-header">
+                        <h2 id="result-number"></h2>
+                        <h3 id="result-title"></h3>
+                    </div>
+                    <div class="lot-content">
+                        <p class="poem" id="result-poem"></p>
+                        <hr>
+                        <div class="explanation-section">
+                            <h4>解曰</h4>
+                            <p id="result-meaning"></p>
+                        </div>
+                        <div class="explanation-section">
+                            <h4>解析</h4>
+                            <p id="result-explanation"></p>
+                        </div>
+                    </div>
+                    <button id="btn-restart" class="btn-secondary">再次請示</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
